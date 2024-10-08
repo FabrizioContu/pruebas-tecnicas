@@ -1,8 +1,7 @@
 import "./App.css";
-import booksData from "../../../pruebas/01-reading-list/books.json";
+import { Books } from "./components/Books";
 
 function App() {
-  const books = booksData.library;
   return (
     <main>
       <aside>
@@ -11,16 +10,7 @@ function App() {
           <h1>Editorial DOCET </h1>
           <h2>Libros disponibles</h2>
         </header>
-        <ul className="books">
-          {books.map((item, index) => {
-            const book = item.book; // Get the 'book' object
-            return (
-              <p className="book" key={index}>
-                <img src={book.cover} alt={book.title} />
-              </p>
-            );
-          })}
-        </ul>
+        <Books />
       </aside>
       <section>
         <h2>Lista de lectura</h2>
